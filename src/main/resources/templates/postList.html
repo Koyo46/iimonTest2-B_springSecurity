@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Posst List</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<table border="1">
+		<tr>
+			<th>id</th>
+			<th>text</th>
+		</tr>
+		<tr th:each="post:${postList}">
+			<td th:text="${post.id}"></td>
+			<td th:text="${post.text}"></td>
+		</tr>
+	</table>
+	<th:block th:if="${!user}">
+	<button type=“button” onclick="location.href='http://localhost:8080/login'">ログイン</button>
+	<button type=“button” onclick="location.href='http://localhost:8080/regist'">新規登録</button>
+	</th:block>
+	<th:block th:if="${user}">
+	<button type=“button” onclick="location.href='http://localhost:8080/logout'">ログアウト</button>
+	<button type=“button” onclick="location.href='http://localhost:8080/postForm'">新規投稿</button>
+	</th:block>
+</body>
+
+</html>

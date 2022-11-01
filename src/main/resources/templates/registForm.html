@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Post List</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+	<form th:action="@{/regist/do}" method="post" th:object="${registData}">
+		<h3>新規登録画面</h3>
+		<table>
+			<tr>
+				<th>user</th>
+				<td>
+					<input type="text" name="userName">
+				</td>
+
+			<tr>
+			<tr>
+				<th>password</th>
+				<td>
+					<input type="password" name="password">
+				</td>
+			<tr>
+		</table>
+		<button type="submit">登録</button>
+	</form>
+</body>
+
+</html>
